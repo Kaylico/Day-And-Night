@@ -5,6 +5,7 @@ function DashBoard() {
   const [isNightMode, setIsNightMode] = useState(false)
   const [isSoundOn, setIsSoundOn] = useState(true)
   const [activeScene, setActiveScene] = useState('')
+  const videoPath = import.meta.env.BASE_URL
 
   function playVideo(event) {
     const activeVideo = event.currentTarget.querySelector('video')
@@ -135,7 +136,7 @@ function DashBoard() {
         >
           <video
             className="split-video split-video-day"
-            src="/videos/day.mp4"
+            src={`${videoPath}videos/day.mp4`}
             loop
             muted
             playsInline
@@ -149,7 +150,7 @@ function DashBoard() {
         >
           <video
             className="split-video split-video-night"
-            src="/videos/night.mp4"
+            src={`${videoPath}videos/night.mp4`}
             loop
             muted
             playsInline
